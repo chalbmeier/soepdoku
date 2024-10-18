@@ -4,18 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "soepdoku"
-version = "0.1.0"
+version = "0.1.4"
 dependencies = [
+  "numpy",
   "pandas",
   "pyparsing",
+  "sympy",
   "deepl",
 ]
 requires-python = ">=3.6"
 authors = [
-  {name = "Christoph Halbmeier", email = "chalbmeier@diw.de"},
+  {name = "Christoph Halbmeier", email = "c.halbmeier@gmail.com"},
 ]
 maintainers = [
-  {name = "Christoph Halbmeier", email = "chalbmeier@diw.de"}
+  {name = "Christoph Halbmeier", email = "c.halbmeier@gmail.com"}
 ]
 
 description = "A package to facilitate work with SOEP metadata."
