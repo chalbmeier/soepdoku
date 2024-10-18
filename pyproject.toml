@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "soepdoku"
-version = "0.1.4"
+version = "v0.1.4"
 dependencies = [
   "numpy",
   "pandas",
