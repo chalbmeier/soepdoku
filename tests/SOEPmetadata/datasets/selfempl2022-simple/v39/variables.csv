@@ -1,0 +1,14 @@
+study,dataset,version,variable,template_id,label,label_de,concept,type,description,description_de,minedition
+soep-core,selfempl2022-simple,v39,pid,,,Personennummer,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0301_v2,,,Wie wurde eigenes Unternehmen gegründet,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0302,,,Anzahl Personen im Gründungsteam,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0630,,,Anzahl Frauen im Gründungsteam,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0631,,,Anzahl Personen mit Migrationshintergrund im Gründungsteam,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0303,,,Anzahl weitere Personen im Team bei Einsteig als Teilhaber,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0632,,,Anzahl Frauen als Einstieg als Teilhaber erfolgte,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0633,,,Anzahl Personen mit Migrationshintergrund als Einstieg als Teilhaber erfolgte,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0003,,,Mehrheitseigentümer vorhanden,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0004,,,Beteiligung Mehrheitseigentümer in %,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0006,,,Gründungsjahr des Unternehmens,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0313,,,Jahr: Übernahmedatum,,byte,,,internal
+soep-core,selfempl2022-simple,v39,elb0318,,,Jahr: Einstieg in das Unternehmen,,byte,,,internal

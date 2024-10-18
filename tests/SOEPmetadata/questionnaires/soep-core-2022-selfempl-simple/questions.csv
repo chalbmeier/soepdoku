@@ -1,0 +1,32 @@
+study,questionnaire,question,item,template.id,text_de,instruction_de,text,instruction,scale,answer_list,range,concept,filter,goto,description_de,description,internalnotes,scripternotes,number,old.template.id,dataset,var_fix
+soep-core,soep-core-2022-selfempl-simple,B1,1,36186,Organisationsmerkmale,,Organizational features,,sec1,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,Text1,Text1,39339,"Wir beginnen mit Fragen zu einigen Organisationsmerkmalen Ihrer Unternehmung.
+",,We start with questions about some of the organizational features of your company.,,sec2,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,1,elb0301_v2,39340,"Sie haben angegeben, selbstständig tätig zu sein. Wie haben Sie Ihr Unternehmen gegründet?
+",,You have stated that you are self-employed. How did you found your company?,,cat,11360M9102,,,,,,,,,,,soep-core-2022-selfempl,elb0301_v2
+soep-core,soep-core-2022-selfempl-simple,1,-1,39340,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,2a,elb0302,39341,Mit wie vielen weiteren Personen haben Sie das Unternehmen gegründet?,,With how many other people did you found the company?,,int,,1:99,,1;elb0301_v2=2,,,,,,,,soep-core-2022-selfempl,elb0302
+soep-core,soep-core-2022-selfempl-simple,2a,-1,39341,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,2b,elb0630,39342,Wie viele Frauen waren im Gründungsteam?,,How many women were on the founding team?,,int,,0:99,,1:elb0301_v2=2,,,,,,,,soep-core-2022-selfempl,elb0630
+soep-core,soep-core-2022-selfempl-simple,2b,-1,39342,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,2c,elb0631,39343,Wie viele Personen mit Migrationshintergrund waren im Gründungsteam?,,How many persons with migration background were on the founding team?,,int,,0:99,,1;elb0301_v2=2,,,,,,,,soep-core-2022-selfempl,elb0631
+soep-core,soep-core-2022-selfempl-simple,2c,-1,39343,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,3a,elb0303,39344,"Wie viele weitere Personen waren in dem Team, in das Sie als Teilhaber/in eingestiegen sind?",,How many other people were in the team that you joined as a partner?,,int,,1:99,,1;elb0301_v2=4,,,,,,,,soep-core-2022-selfempl,elb0303
+soep-core,soep-core-2022-selfempl-simple,3a,-1,39344,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,3b,elb0632,39345,Wie viele davon waren Frauen?,,How many of them were women?,,int,,0:99,,1;elb0301_v2=4,,,,,,,,soep-core-2022-selfempl,elb0632
+soep-core,soep-core-2022-selfempl-simple,3b,-1,39345,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,3c,elb0633,39346,Wie viele davon hatten Migrationshintergrund?,,How many of them had a migration background?,,int,,0:99,,1;elb0301_v2=4,,,,,,,,soep-core-2022-selfempl,elb0633
+soep-core,soep-core-2022-selfempl-simple,3c,-1,39346,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,4,betr_eigent,39347,Hat Ihr Unternehmen eine/n Mehrheitseigentümer/in?,,Does your company have a majority owner?,,cat,1M9102,,,"1;elb0301_v2=2,4",,,,,,,,soep-core-2022-selfempl,elb0003
+soep-core,soep-core-2022-selfempl-simple,5,1,39348,Zu wie viel Prozent ist der/die Mehrheitseigentümer/in an Ihrem Unternehmen beteiligt?,,What percentage of your company is owned by the majority shareholder?,,txt,,,,"(1;elb0301_v2=2,4) & (4;betr_eigent=1)",,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,5,betr_eigent2,39348,[…] Prozent,,[…] percent,,int,,0:100,,,,,,,,,,soep-core-2022-selfempl,elb0004
+soep-core,soep-core-2022-selfempl-simple,5,-1,39348,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6,1,39349,"In welchem Jahr wurde Ihr Unternehmen gegründet, unabhängig von eventuellen Änderungen der Rechtsform, Standort- oder Eigentümerwechseln?","Wenn Sie es nicht genau angeben können, schätzen Sie bitte.","In which year was your company founded, regardless of any changes in legal form, location or ownership?","If you cannot specify exactly, please estimate.",txt,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6,betr_gruendung,39349,Im Jahr:,,In the year:,,int,,:2022,,,,,,,,,,soep-core-2022-selfempl,elb0006
+soep-core,soep-core-2022-selfempl-simple,6,-1,39349,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6a,1,39350,Wann haben Sie das Unternehmen übernommen?,"Wenn Sie es nicht genau angeben können, schätzen Sie bitte.",When did you take over the company?,"If you cannot specify exactly, please estimate.",txt,,,,1;elb0301_v2,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6a,elb0313,39350,Im Jahr:,,In the year:,,int,,1900:2022,,,,,,,,,,soep-core-2022-selfempl,elb0313
+soep-core,soep-core-2022-selfempl-simple,6a,-1,39350,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6b,1,39351,Wann sind Sie in das Unternehmen eingestiegen?,"Wenn Sie es nicht genau angeben können, schätzen Sie bitte.",When did you join the company?,"If you cannot specify exactly, please estimate.",txt,,,,1;elb0301_v2=4,,,,,,,,,
+soep-core,soep-core-2022-selfempl-simple,6b,elb0318,39351,Im Jahr:,,In the year:,,int,,1900:2022,,,,,,,,,,soep-core-2022-selfempl,elb0318
+soep-core,soep-core-2022-selfempl-simple,6b,-1,39351,Kann/möchte ich nicht beantworten,,I cannot/do not want to answer,,bin,,,,,,,,,,,,,

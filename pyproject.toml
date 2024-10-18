@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soepdoku"
+version = "0.1.0"
+dependencies = [
+  "pandas",
+  "pyparsing",
+  "deepl",
+]
+requires-python = ">=3.6"
+authors = [
+  {name = "Christoph Halbmeier", email = "chalbmeier@diw.de"},
+]
+maintainers = [
+  {name = "Christoph Halbmeier", email = "chalbmeier@diw.de"}
+]
+
+description = "A package to facilitate work with SOEP metadata."
+readme = "README.md"

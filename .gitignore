@@ -1,0 +1,8 @@
+*
+!.gitignore
+!README.md
+!pyproject.toml
+!soepdoku
+!soepdoku/*
+!tests
+!tests/**

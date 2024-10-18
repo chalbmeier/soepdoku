@@ -1,0 +1,23 @@
+study,dataset,version,variable,value,label,label_de
+soep-core,selfempl2022-simple,v39,elb0301_v2,-8,Question not part of the survey program this year,Frage in diesem Jahr nicht Teil des Frageprogramms
+soep-core,selfempl2022-simple,v39,elb0301_v2,-7,Only available in less restricted edition,nur in weniger eingeschränkter Edition verfügbar
+soep-core,selfempl2022-simple,v39,elb0301_v2,-6,Version of questionnaire with modified filtering,Fragebogenversion mit geänderter Filterführung
+soep-core,selfempl2022-simple,v39,elb0301_v2,-5,Not included in this version of the questionnaire,in Fragebogenversion nicht enthalten
+soep-core,selfempl2022-simple,v39,elb0301_v2,-4,Inadmissable multiple response,unzulässige Mehrfachantwort
+soep-core,selfempl2022-simple,v39,elb0301_v2,-3,Implausible value,unplausibler Wert
+soep-core,selfempl2022-simple,v39,elb0301_v2,-2,Does not apply,trifft nicht zu
+soep-core,selfempl2022-simple,v39,elb0301_v2,-1,No answer / don’t know,keine Angabe/weiß nicht
+soep-core,selfempl2022-simple,v39,elb0301_v2,1,,Ich habe das Unternehmen alleine gegründet
+soep-core,selfempl2022-simple,v39,elb0301_v2,2,,Ich habe das Unternehmen im Team gegründet
+soep-core,selfempl2022-simple,v39,elb0301_v2,3,,Ich habe das Unternehmen vollständig übernommen
+soep-core,selfempl2022-simple,v39,elb0301_v2,4,,Ich bin als Teilhaber/in in ein Team eingestiegen
+soep-core,selfempl2022-simple,v39,elb0003,-8,Question not part of the survey program this year,Frage in diesem Jahr nicht Teil des Frageprogramms
+soep-core,selfempl2022-simple,v39,elb0003,-7,Only available in less restricted edition,nur in weniger eingeschränkter Edition verfügbar
+soep-core,selfempl2022-simple,v39,elb0003,-6,Version of questionnaire with modified filtering,Fragebogenversion mit geänderter Filterführung
+soep-core,selfempl2022-simple,v39,elb0003,-5,Not included in this version of the questionnaire,in Fragebogenversion nicht enthalten
+soep-core,selfempl2022-simple,v39,elb0003,-4,Inadmissable multiple response,unzulässige Mehrfachantwort
+soep-core,selfempl2022-simple,v39,elb0003,-3,Implausible value,unplausibler Wert
+soep-core,selfempl2022-simple,v39,elb0003,-2,Does not apply,trifft nicht zu
+soep-core,selfempl2022-simple,v39,elb0003,-1,No answer / don’t know,keine Angabe/weiß nicht
+soep-core,selfempl2022-simple,v39,elb0003,1,,Ja
+soep-core,selfempl2022-simple,v39,elb0003,2,,Nein
