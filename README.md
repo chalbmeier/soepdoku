@@ -1,7 +1,5 @@
-[[_TOC_]]
-
 # Description
-soepdoku is a wrapper around pandas to facilitate the work with SOEP-style metadata in Python. 
+soepdoku is a wrapper around pandas to facilitate the work with survey metadata from the Socio-Economic Panel (SOEP). The SOEP is long-running panel study that collects socio-economic data from about 20,000 German households every year. For more information, please visit https://paneldata.org/soep-core/.
 
 # Installation
 ```
