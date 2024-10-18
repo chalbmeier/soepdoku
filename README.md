@@ -3,7 +3,7 @@ soepdoku is a wrapper around pandas to facilitate the work with survey metadata 
 
 # Installation
 ```
-pip install soepdoku@git+https://git.soep.de/chalbmeier/soepdoku.git@0.1.3
+pip install soepdoku@git+https://git.soep.de/chalbmeier/soepdoku.git@v0.14
 ```
 # Usage
 ## Basic usage
