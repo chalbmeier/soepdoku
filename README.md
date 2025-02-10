@@ -1,21 +1,13 @@
-[[_TOC_]]
-
 # Description
-soepdoku is a wrapper around pandas to facilitate the work with SOEP-style metadata in Python. 
+soepdoku is a wrapper around pandas to facilitate the work with survey metadata from the Socio-Economic Panel (SOEP). The SOEP is long-running panel study that collects socio-economic data from about 20,000 German households every year. The study's metadata comprises questionnaires and dataset definitions and is available through https://git.soep.de/kwenzig/publicecoredoku. 
+
+For more information on SOEP, please visit https://www.diw.de/en/diw_01.c.615551.en/research_infrastructure__socio-economic_panel__soep.html and https://paneldata.org/soep-core/.
 
 # Installation
-## Complete installation
-The complete installation installs all dependencies needed to use soepdoku.
+## Installation
 
 ```
-pip install "soepdoku[complete] @ git+https://github.com/chalbmeier/soepdoku.git"
-```
-
-## Minimal installation
-The minimal installation installs only the dependencies required to parse filter strings in the command line and is intended for use in CI/CD pipelines.
-
-```
-pip install git+https://github.com/chalbmeier/soepdoku.git
+python3 -m pip install soepdoku
 ```
 
 # Usage
