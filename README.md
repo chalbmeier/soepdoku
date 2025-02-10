@@ -1,7 +1,7 @@
 # Description
-soepdoku is a wrapper around pandas to facilitate the work with survey metadata from the Socio-Economic Panel (SOEP). The SOEP is long-running panel study that collects socio-economic data from about 20,000 German households every year. The study's metadata comprises questionnaires and dataset definitions and is available through https://git.soep.de/kwenzig/publicecoredoku. 
+soepdoku is a wrapper around pandas to facilitate the work with survey metadata from the Socio-Economic Panel (SOEP) in Python. 
 
-For more information on SOEP, please visit https://www.diw.de/en/diw_01.c.615551.en/research_infrastructure__socio-economic_panel__soep.html and https://paneldata.org/soep-core/.
+SOEP is long-running panel study that collects socio-economic data from about 20,000 German households every year. The study's metadata comprises questionnaires and dataset definitions and is available through https://git.soep.de/kwenzig/publicecoredoku. For more information on SOEP, please visit https://www.diw.de/en/diw_01.c.615551.en/research_infrastructure__socio-economic_panel__soep.html and https://paneldata.org/soep-core/.
 
 # Installation
 ## Installation
