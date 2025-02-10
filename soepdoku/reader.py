@@ -5,36 +5,46 @@ from .handler import ConsoleHandler
 
 
 def read_csv(csvfile, csvtype=None, output='DataFrame', parse_filters=False, filter_excep=True):
-
     """Read SOEP-style metadata stored in a CSV file. 
 
-    Args:
-        csvfile (Path or str): Path to CSV file.
-        csvtype (str, optional): Type of CSV file, ex.: 'questions' or 'variables'. Valid types
-        are stored in .const.VALID_CSV_TYPES.
-        If not provided, the type is automatically inferred from the file name.
-        output (str, optional): The CSV file is converted to given type. Defaults to 'DataFrame'.
-        parse_filters (bool, optional): If True, the 'filter' column is parsed and converted to
-        SOEP-style Filter() objects. Defaults to False.
+    Parameters
+    ----------
+    csvfile : Path or str
+        Path to CSV file.
+    csvtype : str, optional
+        Type of CSV file, ex.: 'questions' or 'variables'. Valid types are
+        stored in .const.VALID_CSV_TYPES. If not provided, the type is automatically
+        inferred from the file name, by default None
+    output : {'DataFrame', 'list'}, optional
+        The CSV file is converted to given type, by default 'DataFrame'
+    parse_filters : bool, optional
+         If True, the 'filter' column is parsed and converted to SOEP-style Filter() objects,
+        by default False
+    filter_excep : bool, optional
+        If True, list of exceptions is filtered before emitting, by default True
 
-    Raises:
-        Exception: If 'output' is a currently unsupported type.
+    Returns
+    -------
+    pandas.DataFrame or csv.reader
+       Returns a data object of the type provided in 'output'
 
-    Returns:
-        Returns a data object of the type provided in 'output'. Default is 'DataFrame'.
+    Raises
+    ------
+    Exception
+        If 'output' is a currently unsupported type.
     """
-    
-
     reader = Reader(csvfile, csvtype=csvtype)
 
     if output=='DataFrame':
         data = reader.read_as_dataframe()
+    elif output=="list":
+        data = reader.read_as_list()
     else:
-        raise Exception(f"output='{output}' invalid argument. Use 'DataFrame'.")
+        raise Exception(f"output='{output}' invalid argument. Use 'DataFrame' or 'list'.")
 
     # Parse filters
     if parse_filters==True:
-        parser = Parser()
+        parser = Parser(input_type=output)
         parsing_errors = parser.parse(data)  # updates data
 
         # Filter exceptions before emitting
@@ -47,6 +57,30 @@ def read_csv(csvfile, csvtype=None, output='DataFrame', parse_filters=False, fil
 
     return data
 
+def read_csv_cli():
+    """Reads SOEP-style questions.csv and parses its filters. For command line use. Parsing
+    errors are sent to the console.
+
+    Parameters
+    ----------
+    csvfile : Path or str
+        Path to CSV file.
+
+    Returns
+    -------
+    None
+        
+    """
+     
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser()
+    parser.add_argument("csvfile", help="Path to SOEP-style questions.csv")
+    args = parser.parse_args()
+
+    _ = read_csv(args.csvfile, csvtype='questions', output='list', parse_filters=True)
+    
+    return None
 
 class Reader:
 
@@ -101,7 +135,7 @@ class Reader:
     
     def read_as_dataframe(self):
 
-        """Reads csvfile and returns them as pandas DataFrame(). Arguments of pandas.read_csv() are
+        """Reads csvfile and returns it as pandas.DataFrame(). Arguments of pandas.read_csv() are
         set in accordance with SOEP metadata guidelines.
 
         Returns:
@@ -120,3 +154,16 @@ class Reader:
         df.csvtype = self.csvtype
 
         return df
+    
+    def read_as_list(self):
+
+        """Reads csvfile and returns it as list of dictionaries.
+
+        Returns
+        -------
+        list of dictionaries
+        """
+        from csv import DictReader
+
+        with open(self.csvfile, 'r', encoding='utf-8') as f:
+            return list(DictReader(f))

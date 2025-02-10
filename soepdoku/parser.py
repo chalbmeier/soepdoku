@@ -6,42 +6,68 @@ class Parser:
     pandas DataFrame as input. 
     """    
 
-    def __init__(self):
+    def __init__(self, input_type):
         """Initializes a new Parser instance.
         """        
+        self.input_type = input_type 
         self.filter_parser = FilterParser()
         self.parsing_errors = ParsingErrors()
 
-    def parse(self, dataframe):
-        """Parses a dataframe with SOEP metadata row by row. Parsing of filter strings
-          requires them to be stored in a column called 'filter'. The function adds a new
-          column 'filter_parsed' to the dataframe.
+    def parse(self, container):
+        """Parses a pandas.DataFrame or list of dictionaries with SOEP metadata row by row. 
+          Parsing of filter strings requires a column or key called 'filter'. 
+          The function adds a new column/key 'filter_parsed' to the DataFrame/list.
 
         Args:
-            dataframe (DataFrame): A pandas dataframe. 
+            container: A pandas.DataFrame or list of dictionaries. 
 
         Returns:
             self.parsing_errors (list): A list of exceptions encountered during parsing.
         """
- 
-        if 'filter' not in dataframe.columns:
-            return self.parsing_errors
 
-        dataframe['filter_parsed'] = None
+        # Parse pandas.DataFrame
+        if self.input_type=="DataFrame": 
+            if 'filter' not in container.columns:
+                return self.parsing_errors
+            self._parse_dataframe(container)
 
-        for i in dataframe.index:
-            result = self._parse_item(dataframe.loc[i], i+2)
-            # +2 to account for different line numbering in spreadsheet software
-            
-            if result is not None:
-                dataframe.at[i, 'filter_parsed'] = result
+        # Parse list of dictionaries
+        if self.input_type=="list":
+            if len(container)==0:
+                return self.parsing_errors
+            if 'filter' not in container[0].keys():
+                return self.parsing_errors
+            self._parse_list(container)
+
 
         if len(self.parsing_errors) > 0:
             print("Parsing of filters finished with errors.")
 
         return self.parsing_errors
+    
 
-    def _parse_item(self, row, source_line):
+    def _parse_dataframe(self, dataframe):
+     
+        dataframe['filter_parsed'] = None
+
+        for i in dataframe.index:
+            result = self._parse_item(dataframe.loc[i, 'filter'], i+2)
+            # +2 to account for different line numbering in spreadsheet software
+
+            if result is not None:
+                dataframe.at[i, 'filter_parsed'] = result
+
+    def _parse_list(self, lst):
+
+        for i, row in enumerate(lst):
+            row['filter_parsed'] = None
+            result = self._parse_item(row['filter'], i+2)
+
+            if result is not None:
+                row['filter_parsed'] = result
+
+
+    def _parse_item(self, filter_string, source_line):
         """Parses a pandas Series. For parsing of filters, the series requires the column 'filter'.
 
         Args:
@@ -53,7 +79,7 @@ class Parser:
         """
         
         try:
-            result, new_errors = self.filter_parser.parse(row['filter'], source_line)
+            result, new_errors = self.filter_parser.parse(filter_string, source_line)
         except:
             result = None
         else:

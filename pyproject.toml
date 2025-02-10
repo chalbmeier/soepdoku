@@ -4,21 +4,30 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "soepdoku"
-version = "v0.1.4"
+version = "v0.1.5"
 dependencies = [
-  "numpy",
-  "pandas",
   "pyparsing",
   "sympy",
-  "deepl",
 ]
-requires-python = ">=3.6"
+
+requires-python = ">=3.8"
 authors = [
-  {name = "Christoph Halbmeier", email = "c.halbmeier@gmail.com"},
+  {name = "Christoph Halbmeier", email = ""},
 ]
 maintainers = [
-  {name = "Christoph Halbmeier", email = "c.halbmeier@gmail.com"}
+  {name = "Christoph Halbmeier", email = ""}
 ]
 
 description = "A package to facilitate work with SOEP metadata."
 readme = "README.md"
+
+
+[project.optional-dependencies]
+complete = [
+  "pandas",
+  "deepl",
+  "numpy",
+]
+
+[project.scripts]
+parse_filters = "soepdoku.reader:read_csv_cli"
