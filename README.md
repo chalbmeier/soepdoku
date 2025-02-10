@@ -7,7 +7,7 @@ SOEP is long-running panel study that collects socio-economic data from about 20
 ## Installation
 
 ```
-python3 -m pip install soepdoku
+python -m pip install soepdoku
 ```
 
 # Usage
